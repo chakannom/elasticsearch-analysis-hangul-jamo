@@ -1,1 +1,1 @@
-# Elasticsearch Analyzer Korean Jamo & Chosung
+# Elasticsearch Analyzer Hangul Jamo & Chosung
