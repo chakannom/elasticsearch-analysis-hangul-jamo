@@ -3,7 +3,7 @@ package org.elasticsearch.index.analysis.parser;
 import java.util.HashMap;
 import java.util.Map;
 
-public enum KoreanJamoParserType {
+public enum HangulJamoParserType {
     JAMO {
         @Override
         public IJamoParser getParser() {
@@ -17,15 +17,15 @@ public enum KoreanJamoParserType {
         }
     };
 
-    private static Map<String, KoreanJamoParserType> stringToEumMap = new HashMap<>(KoreanJamoParserType.values().length);
+    private static Map<String, HangulJamoParserType> stringToEumMap = new HashMap<>(HangulJamoParserType.values().length);
 
     static {
-        for (KoreanJamoParserType type : KoreanJamoParserType.values()) {
+        for (HangulJamoParserType type : HangulJamoParserType.values()) {
             stringToEumMap.put(type.toString(), type);
         }
     }
 
-    public static KoreanJamoParserType getParserTypeByString(String parserType) {
+    public static HangulJamoParserType getParserTypeByString(String parserType) {
         if (stringToEumMap.containsKey(parserType)) {
             return stringToEumMap.get(parserType);
         }

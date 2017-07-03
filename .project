@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>elasticsearch-analysis-korean-jamo</name>
+	<name>elasticsearch-analysis-hangul-jamo</name>
 	<comment></comment>
 	<projects>
 	</projects>

@@ -7,7 +7,7 @@ compileJava.options.encoding = 'UTF-8'
 version = '1.0.0'
 jar {
     manifest {
-        attributes 'Implementation-Title': 'Elasticsearch Analysis Korean Jamo',
+        attributes 'Implementation-Title': 'Elasticsearch Analysis Hangul Jamo',
                    'Implementation-Version': version
     }
 }
@@ -36,7 +36,7 @@ uploadArchives {
 }
 
 task buildPluginZip(type: Zip, dependsOn:[':jar']) {
-    baseName = 'elasticsearch-analysis-korean-jamo'
+    baseName = 'elasticsearch-analysis-hangul-jamo'
     classifier = 'plugin'
     from files(libsDir)
     from 'src/main/resources'
