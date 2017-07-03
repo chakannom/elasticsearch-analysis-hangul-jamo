@@ -1,3 +1,3 @@
 # Elasticsearch Analyzer Hangul Jamo & Chosung
 
-required lasticsearch v2.4.4
+required elasticsearch v2.4.4
