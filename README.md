@@ -3,7 +3,7 @@
 required elasticsearch v2.4.4
 
 Setting Jamo Analyzer
-
+```
 curl -XPUT '127.0.0.1:9200/test_jamo' -d '{
   "settings": {
     "index": {
@@ -35,3 +35,4 @@ curl -XPUT '127.0.0.1:9200/test_jamo' -d '{
 }'
 
 curl '127.0.0.1:9200/test_jamo/_analyze?pretty=1&analyzer=hangul_jamo_analyzer' -d '아버지가 방에 들어가신다.'
+```
