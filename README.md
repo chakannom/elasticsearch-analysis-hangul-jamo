@@ -1,6 +1,8 @@
 # Elasticsearch Analyzer Hangul Jamo & Chosung
 
-required elasticsearch v2.4.4
+required elasticsearch v5.5.3
+
+./gradlew build buildPluginZip
 
 Setting Jamo Analyzer
 ```

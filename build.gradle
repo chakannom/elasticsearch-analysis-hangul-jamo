@@ -1,10 +1,19 @@
-apply plugin: 'java'
-apply plugin: 'eclipse'
+import org.gradle.internal.os.OperatingSystem
 
-sourceCompatibility = 1.7
+apply plugin: 'java'
+
+sourceCompatibility=1.8
+targetCompatibility=1.8
+assert System.properties['java.specification.version'] == '1.8'
 compileJava.options.encoding = 'UTF-8'
 
-version = '1.0.0'
+apply plugin: 'maven'
+
+group = 'com.chakans.elasticsearch.jamo'
+version = '5.5.3'
+
+description = ''
+
 jar {
     manifest {
         attributes 'Implementation-Title': 'Elasticsearch Analysis Hangul Jamo',
@@ -12,19 +21,25 @@ jar {
     }
 }
 
-repositories {
-    mavenCentral()
+configurations {
+    distJars {
+        extendsFrom runtime
+    }
 }
 
-configurations {
-    provided
+repositories {
+    mavenLocal()
+    jcenter()
 }
 
 dependencies {
-    compile group: 'commons-collections', name: 'commons-collections', version: '3.2'
-    compile group: 'org.elasticsearch', name: 'elasticsearch', version: '2.4.4'
-    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.5'
-    testCompile group: 'junit', name: 'junit', version: '4.+'
+    compile "org.elasticsearch:elasticsearch:${elasticsearch_version}"
+    compile "org.apache.commons:commons-lang3:${commons_lang3_version}"
+    testCompile "junit:junit:${junit_version}"
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '4.6'
 }
 
 test {
